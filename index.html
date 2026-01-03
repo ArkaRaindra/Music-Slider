@@ -1,0 +1,127 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+  <title>Music Slider</title>
+  <link rel="stylesheet" href="style.css">
+  <link rel="shortcut icon" href="g/luluco.png" type="image/x-icon">
+</head>
+<body>
+<h1>1/2 Circle Slider</h1>
+<div class="container">
+  <section class="left">
+    <div class="scene" id="scene" aria-live="polite">
+      <div class="chair" data-title="Luluko" data-desc="Luluko adalah karakter utama dalam Space Patrol Luluco. Dia adalah siswi SMP yang ceria dan energik, meskipun awalnya ragu-ragu, dia akhirnya bergabung dengan Space Patrol dan menemukan keberanian dalam dirinya." data-logo="/g/Pipo Password.jpeg" data-track="Pipo Password" data-artist="TeddyLoid, Bonjour Suzuki" data-audio="a/Pipo Password.mp3">
+        <a href="tes.html" target="_blank">
+          <img src="/g/luluco.png" alt="Luluko">
+        </a>
+      </div>
+      <div class="chair" data-title="Yui Hirasawa" data-desc="Yui Hirasawa adalah protagonis dari K-ON!. Dia adalah gitaris utama dan vokalis band Houkago Tea Time. Yui dikenal karena kepolosannya, sifatnya yang ceroboh, tetapi juga bakat musiknya yang alami." data-logo="/g/HTT.png" data-track="U & I" data-artist="Houkago Tea Time" data-audio="a/U & I.mp3">
+        <a href="https://example.com/haru" target="_blank">
+          <img src="/g/Yui.png" alt="Yui Hirasawa">
+        </a>
+      </div>
+      <div class="chair" data-title="Kagamine Rin" data-desc="Kagamine Rin adalah salah satu karakter Vocaloid yang populer. Dia dikenal dengan suaranya yang ceria dan energik, serta sering digunakan dalam lagu-lagu bertema ceria dan upbeat." data-logo="/g/RinMelancholic.png" data-track="Melancholic" data-artist="Kagamine Rin, Junky" data-audio="a/Melancholic.mp3">
+        <a href="https://example.com/yua" target="_blank">
+          <img src="/g/RinMelancholic.png" alt="Kagamine Rin">
+        </a>
+      </div>
+      <div class="chair" data-title="Kimino Shiranai Monogatari" data-desc="Lagu ini adalah lagu penutup dari anime Bakemonogatari. Lagu ini dinyanyikan oleh Supercell dan menjadi salah satu lagu anime paling ikonis dengan lirik yang puitis dan emosional." data-logo="/g/artwork-440x440.jpg" data-track="Kimino Shiranai Monogatari" data-artist="Supercell" data-audio="a/Kimino Shiranai Monogatari (2).mp3">
+        <a href="https://example.com/M" target="_blank">
+          <img src="/g/artwork-440x440.jpg" alt="Kimino Shiranai Monogatari">
+        </a>
+      </div>
+      <div class="chair" data-title="Sakata Gintoki" data-desc="Sakata Gintoki adalah protagonis Gintama. Dia adalah samurai yang malas dan suka makan manis, tetapi memiliki hati yang kuat dan setia kepada teman-temannya. Gintoki menjalankan bisnis 'Yorozuya' yang menerima berbagai pekerjaan aneh." data-logo="/g/Gintoki.png" data-track="Sakura Mitsutsuki" data-artist="SPYAIR" data-audio="a/Sakura Mitsutsuki.mp3">
+        <a href="https://example.com/yuzuki" target="_blank">
+          <img src="/g/Gintoki.png" alt="Sakata Gintoki">
+        </a>
+      </div>
+
+      <div class="hub" aria-hidden="true"></div>
+    </div>
+
+    <div class="controls">
+      <button class="btn" id="prev" aria-label="Slide sebelumnya">Prev</button>
+      <button class="btn" id="next" aria-label="Slide berikutnya">Next</button>
+    </div>
+  </section>
+
+  <aside class="right" aria-live="polite">
+    <div class="inside-container">
+      <div class="meta" id="counter">Slide —</div>
+      <h2 id="title">—</h2>
+      <img id="character-logo" class="logo" src="/g/luluco.png" alt="Character Logo">
+      
+      <div class="music-player">
+        <div class="player-info">
+          <div class="player-album-art">
+            <img id="player-album-img" src="/g/luluco.png" alt="Album Art">
+          </div>
+          <div class="player-track-info">
+            <div class="player-track-title" id="player-track-title">Track Title</div>
+            <div class="player-track-artist" id="player-track-artist">Artist Name</div>
+          </div>
+        </div>
+        
+        <div class="player-progress">
+          <div class="progress-bar" id="progress-bar">
+            <div class="progress" id="progress"></div>
+          </div>
+          <div class="time-display">
+            <span id="current-time">0:00</span>
+            <span id="total-time">0:00</span>
+          </div>
+        </div>
+        
+        <div class="player-controls">
+          <button class="control-btn" id="prev-track">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="19 20 9 12 19 4 19 20"></polygon>
+              <line x1="5" y1="19" x2="5" y2="5"></line>
+            </svg>
+          </button>
+          
+          <button class="control-btn play-pause" id="play-pause">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="play-icon">
+              <polygon points="5 3 19 12 5 21 5 3"></polygon>
+            </svg>
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" id="pause-icon" style="display: none;">
+              <rect x="6" y="4" width="4" height="16"></rect>
+              <rect x="14" y="4" width="4" height="16"></rect>
+            </svg>
+          </button>
+          
+          <button class="control-btn" id="next-track">
+            <svg xmlns="http://www.w3.org/2000/svg" width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+              <polygon points="5 4 15 12 5 20 5 4"></polygon>
+              <line x1="19" y1="5" x2="19" y2="19"></line>
+            </svg>
+          </button>
+        </div>
+        
+        <div class="volume-control">
+          <svg xmlns="http://www.w3.org/2000/svg" width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round">
+            <polygon points="11 5 6 9 2 9 2 15 6 15 11 19 11 5"></polygon>
+            <path d="M19.07 4.93a10 10 0 0 1 0 14.14M15.54 8.46a5 5 0 0 1 0 7.07"></path>
+          </svg>
+          <div class="volume-slider" id="volume-slider">
+            <div class="volume-level" id="volume-level"></div>
+          </div>
+        </div>
+      </div>
+      
+      <!-- Deskripsi karakter -->
+      <div id="character-description" class="character-description"></div>
+      
+      <!-- Lirik lagu -->
+      <div id="lyrics-container" class="lyrics-container"></div>
+    </div>
+  </aside>
+</div>
+
+<audio id="audio-player"></audio>
+
+<script src="script.js" defer></script>
+</body>
+</html>
